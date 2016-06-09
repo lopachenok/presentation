@@ -9,171 +9,174 @@
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>Методология БЭМ</h1>
 	</header>
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<img src="pictures/cover.jpg" alt="" class="cover">
+		<h2>Методология БЭМ</h2>
+		<p>Лопаченок Софья</p>
+		<img src="pictures/sign_theme_batman.png" alt="" class="cover">
 		<!--
 			To apply styles to the certain slides
 			set slide ID to get needed elements
 			-->
 		<style>
+            #cover img{
+              left: 30%;
+            }
 			#cover h2 {
 				margin:30px 0 0;
-				color:#FFF;
+				color:#000;
 				text-align:center;
 				font-size:70px;
 				}
 			#cover p {
 				margin:10px 0 0;
 				text-align:center;
-				color:#FFF;
+				color:#000;
 				font-style:italic;
 				font-size:20px;
 				}
-				#cover p a {
-					color:#FFF;
-					}
+				
 		</style>
 	</section>
 	<section class="slide">
-		<h2>Shower key features</h2>
+	  <h2>Проблемы CSS</h2>
 		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
+			<li>CSS сложно понять без контекста (HTML</li>
+			<li class="next">Правила могут повторяться и переопределять друг друга</li>
+			<li class="next">Часть свойств наследуются</li>
+			<li class="next">Почти нет группировки</li>
+			<li class="next">Количество CSS всегда растет</li>
 		</ol>
 	</section>
 	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
+		<h2>Решения проблем</h2>
+		<ol>
+			<li>Соглашения о написании кода: @mdo, cssguidelin.es, google, тысячи их.</li>
+			<li>Методологии именования селекторов: OOCSS, SMACSS, БЭМ</li>
+			<li>Грамотная файловая организация</li>
+			<li>Грамотное комментирование кода</li>
+		</ol>
+	</section>
+	
+	<section class="slide">
+		<h2>БЭМ</h2>
+		<p>Три типа селекторов: Блок. Элемент (блока). Модификатор</p>
+		<p>Полный стек и только метод именования селекторов.</p>
+		<p><a href="http://frontender.info/MindBEMding/#golovokruzhitelynoe-pogruzhenie-v-bm">Модификация </a>Николаса Галлахера.</p>
 	</section>
 	<section class="slide">
-		<h2>Code samples</h2>
+		<h2>БЭМ: Почему он лучший</h2>
+		<p>Даёт абсолютно независимые блоки</p>
+		<ol>
+			<li>Предсказуемость работы кода</li>
+			<li>Безопасная модификация блоков</li>
+			<li>Самодокументируемость CSS — код понятен без контекста</li>
+			<li>Реиспользуемость (в т.ч. кросспроектная)</li>
+		</ol>
+	</section>
+	<section class="slide" id="class-type">
+		<h2>БЭМ: Три типа классов</h2>
+		<p><strong>Блок — </strong>абсолютно самостоятельная сущность. Из блоков собирается страница.</p>
+		<p class="note">Примеры: запись в блоге, кнопка, карточка товара в рубрике каталога.</p> 
+
+		<p><strong>Элемент — </strong>часть блока, абсолютно несамостоятельная сущность, не может встречаться вне своего блока</p>
+		<p class="note">Примеры: «шапка» записи в блоге, название товара в карточке товара.</p> 
+		
+		<p><strong>Модификатор — </strong>модификатор внешнего вида блока или элемента.</p>
+		<p class="note">Пример: модификатор фонового цвета кнопки.</p> 
+		
+		<style>
+          #class-type p {
+            margin-bottom: 0.5em;
+            line-height: 40px;
+          }
+        </style>
+	</section>
+	<section class="slide" id="block">
+		<h2>БЭМ: Блок</h2>
+		<p>Имя класса блока <strong>должно</strong> отвечать на вопрос «что это такое?»</p>
+		<p>Имя класса блока <strong>НЕ должно</strong> отвечать на вопрос «как это выглядит?».</p>
+		<p>Блоки могут быть вложены друг в друга.</p>
 		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+		  <code>.btn {</code>
+		  <code>  color: blue;</code>
+		  <code>  border-radius: 5px;</code>
+		  <code>  background: #eee;</code>
+		  <code>}</code>
 		</pre>
-	</section>
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
 		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
+          #block p {
+            margin-bottom: 0.5em;
+            line-height: 40px;
+          }
+        </style>
+	</section>
+	<section class="slide" id="element">
+		<h2>БЭМ: Элемент</h2>
+		<p>Имя класса элемента <strong>должно</strong> отвечать на вопрос «что это такое?»</p>
+		<p>Имя класса элемента <strong>НЕ должно</strong> отвечать на вопрос «как это выглядит?».</p>
+		<p>Составление класса элемента: имя-блока__имя-элемента</p>
+		<pre>
+		  <code>.main-nav__list {}</code>
+		  <code>.main-nav__list-item {}</code>
+		  <code>.main-nav__link {}</code>
+		  <code>.blog-post__header {}</code>
+		</pre>
+		<style>
+          #element p {
+            margin-bottom: 0.5em;
+            line-height: 40px;
+          }
+        </style>
+	</section>
+	<section class="slide" id="modificator">
+		<h2>БЭМ: Модификатор</h2>
+		<p>Имя класса-модификатора должно говорить о сути модификации (ключ-значение или только значение)</p>
+		<p>Класс-модификатор задаёт только модификацию и не должен встречаться в HTML без того класса, который он модифицирует.</p>
+		<p>У одного блока допустимо несколько модификаторов.</p>
+		<style>
+          #modificator p {
+            margin-bottom: 0.5em;
+            line-height: 40px;
+          }
+        </style>
+	</section>
+	<section class="slide" id="modificator2">
+		<h2>БЭМ: Модификатор</h2>
+        <p><strong>Составление класса модификатора:</strong></p>
+        <p>БЭМ Яндекс: имя-блока_имя-модификатора</p> 
+        <p>Модификация Николаса Галахера: имя-блока--имя-модификатора</p> 
+		<pre>
+		  <code>.btn--large {}</code>
+		  <code>.blog-post--border-blue {}</code>
+		</pre>
+		<style>
+          #modificator2 p {
+            margin-bottom: 0.5em;
+            line-height: 40px;
+          }
+        </style>
+	</section>
+	<section class="slide" >
+		<h2>БЭМ: Проблемка...</h2>
+        <p>Как отличить элемент блока от вложенного блока?</p>
+        <p><strong>ЭТО</strong> может с высокой вероятностью потребоваться вне родителя?<br>Да, может — это вложенный блок.<br>Нет, только внутри родителя — это элемент</p> 
 	</section>
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
-	<section class="slide">
-		<h2>Inner navigation</h2>
+		<h2>БЭМ: Правила</h2>
 		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
+			<li>Селектор — только класс</li>
+			<li>Избегаем вложенных селекторов</li>
+			<li>Отказываемся от !important</li>
+			<li>Минимум глобальных стилей (типографика)</li>
+			<li>Избегаем тегов в селекторах</li>
+			<li>HTML: минимум тегов, не покрытых классами</li>
+			<li>Избегаем классов-не-блоков</li>
 		</ol>
 	</section>
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
-	</section>
-	<p class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</p>
+	
+	
 	<!--
 		To hide progress bar from entire presentation
 		just remove “progress” element.
