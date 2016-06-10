@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
+	<title>БЭМ</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +42,7 @@
 	<section class="slide">
 	  <h2>Проблемы CSS</h2>
 		<ol>
-			<li>CSS сложно понять без контекста (HTML</li>
+			<li class="next">CSS сложно понять без контекста (HTML)</li>
 			<li class="next">Правила могут повторяться и переопределять друг друга</li>
 			<li class="next">Часть свойств наследуются</li>
 			<li class="next">Почти нет группировки</li>
@@ -175,8 +175,96 @@
 			<li>Избегаем классов-не-блоков</li>
 		</ol>
 	</section>
-	
-	
+	<section class="slide" >
+		<h2>БЭМ: Уровни переопределения</h2>
+        <p>Конечная реализация блока может быть разделена по разным уровням переопределения. </p>
+        <p>Каждый последующий уровень добавляет или перекрывает исходную реализацию блока.</p> 
+	</section>
+	<section class="slide" >
+		<h2>БЭМ: Файловая организация</h2>
+        <h3><strong>Файловая система обычного человека</strong></h3>
+        <pre>
+          <code>project/</code>
+           <code> css/</code>
+            <code>  style.css</code>
+            <code>  custom.css</code>
+          <code> js/</code>
+           <code>   main.js</code>
+           <code>   slider.js</code>
+          <code>  img/</code>
+        </pre>
+        
+        <style>
+          .slide pre code:not(:only-child)::before {
+            display: none;
+          }
+          .slide pre code {
+            line-height: 40px;
+          }
+       </style>
+	</section>
+	<section class="slide" >
+		<h2>БЭМ: Файловая организация</h2>
+        <h3><strong>Файловая система <s>курильщика</s> продвинутого верстальщика</strong></h3>
+        <pre><code>blocks/
+    input/
+        input.css  # Реализация блока input в технологии CSS
+        input.js   # Реализация блока input в технологии JS
+    button/
+        button.css
+        button.js
+        button.png
+</code></pre>
+        
+        <style>
+          .slide pre code:not(:only-child)::before {
+            display: none;
+          }
+          .slide pre code {
+            line-height: 40px;
+          }
+       </style>
+	</section>
+	<section class="slide" >
+		<h2>БЭМ: Файловая организация</h2>
+        <h3><strong>Преимущества</strong></h3>
+        <ol>
+          <li>Модульность</li>
+          <li>Переносимость компонентов</li>
+          <li>Легко ориентироваться в проекте</li>
+        </ol>
+        
+        <style>
+          .slide pre code:not(:only-child)::before {
+            display: none;
+          }
+          .slide pre code {
+            line-height: 40px;
+          }
+       </style>
+	</section>
+	<section class="slide" id="end">
+		<h2>Вопросы?</h2>
+		
+		<img src="pictures/4.1.jpg" alt="" class="cover">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+            #end img{
+              left: 30%;
+            }
+			#end h2 {
+				margin:30px 0 0;
+				color:#000;
+				text-align:center;
+				font-size:70px;
+				}
+			
+				
+		</style>
+	</section>
 	<!--
 		To hide progress bar from entire presentation
 		just remove “progress” element.
